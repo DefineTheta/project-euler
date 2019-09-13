@@ -2,7 +2,11 @@
 #include <cmath>
 
 bool isPrime(long n){
-	for(int i = 2; i <= int(floor(sqrt(n))); i++){
+	if(n % 2 == 0){
+		return false;
+	}
+
+	for(int i = 3; i <= int(floor(sqrt(n))); i+=2){
 		if(n % i == 0){
 			return false;
 		}
